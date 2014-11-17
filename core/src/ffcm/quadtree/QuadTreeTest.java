@@ -73,7 +73,9 @@ public class QuadTreeTest extends ApplicationAdapter
 					{	
 						QuadTree.numComp = 0;
 						
-						selectedPoints = quadTree.SearchArea(new Rectangle(worldPos.x - 50, worldPos.y - 50, 100, 100));
+						int boxSize = 50;
+						
+						selectedPoints = quadTree.SearchArea(new Rectangle(worldPos.x - boxSize * 0.5f, worldPos.y - boxSize * 0.5f, boxSize, boxSize));
 						
 						if(numPoints > 0)
 							Gdx.app.log("QuadTreeTest", "Comparations: " + QuadTree.numComp + " of " + numPoints + " " + (int)(QuadTree.numComp / (float) numPoints * 100.0f) + "%");
@@ -87,6 +89,18 @@ public class QuadTreeTest extends ApplicationAdapter
 					if(keycode == Input.Keys.R)
 					{
 						for(int i = 0; i < 100; ++i)
+						{
+							Vector2 randomPoint = new Vector2(random.nextFloat() * viewport.getWorldWidth(), random.nextFloat() * viewport.getWorldHeight());
+							
+							quadTree.Add(randomPoint);
+							numPoints++;
+						}
+						
+						return true;
+					}
+					else if(keycode == Input.Keys.Y)
+					{
+						for(int i = 0; i < 5000; ++i)
 						{
 							Vector2 randomPoint = new Vector2(random.nextFloat() * viewport.getWorldWidth(), random.nextFloat() * viewport.getWorldHeight());
 							
@@ -140,7 +154,7 @@ public class QuadTreeTest extends ApplicationAdapter
 			{
 				for(int i = 0; i < selectedPoints.length; ++i)
 				{
-					shapeRenderer.circle(selectedPoints[i].x, selectedPoints[i].y, 3.0f);
+					shapeRenderer.circle(selectedPoints[i].x, selectedPoints[i].y, 2.5f);
 				}
 			}
 			shapeRenderer.end();

@@ -123,6 +123,31 @@ public class QuadTree
 		return vecs;
 	}
 	
+	public boolean Contains(final Vector2 point)
+	{
+		numComp++;
+		
+		if(!area.contains(point))
+			return false;
+		
+		for(int i = 0; i < data.size(); ++i)
+		{
+			Vector2 dataPoint = data.get(i);
+			
+			if(dataPoint.epsilonEquals(point, 0.05f))
+				return true;
+		}
+		
+		if(child != null)
+		{
+			for(int i = 0; i < child.length; ++i)
+				if(child[i].Contains(point))
+					return true;
+		}
+		
+		return false;
+	}
+	
 	public void Remove(final Vector2 point)
 	{
 	}
