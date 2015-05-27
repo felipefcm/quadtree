@@ -1,10 +1,15 @@
 
-package ffcm.antsim.resource.quadtree;
+package ffcm.quadtree;
 
-import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
 
 public class QuadTreeData<T>
 {
-	public Rectangle bounds;
+	public Vector2 point;
 	public T info;
+
+	public QuadTreeData()
+	{
+		point = new Vector2();
+	}
 }
