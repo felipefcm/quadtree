@@ -6,5 +6,5 @@
 	<inherits name='QuadTreeTest' />
 	<entry-point class='ffcm.quadtree.client.HtmlLauncher' />
 	
-	<set-configuration-property name="gdx.assetpath" value="../core/assets" />
+	<set-configuration-property name="gdx.assetpath" value="../android/assets" />
 </module>
