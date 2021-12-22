@@ -21,7 +21,7 @@ public class QuadTreeTest extends ApplicationAdapter
 {
 	public static final int V_WIDTH = 1024;
 	public static final int V_HEIGHT = 1024;
-	public static final float DESKTOP_SCALE = 1.0f;
+	public static final float DESKTOP_SCALE = 0.9f;
 	
 	public static FitViewport viewport;
 	private OrthographicCamera camera;

@@ -43,7 +43,7 @@ public class QuadTreeDrawer
 		else
 		{
 			for(QuadTreeData data : node.data)
-				shapeRenderer.circle(data.point.x, data.point.y, 2.0f);
+				shapeRenderer.circle(data.point.x, data.point.y, 4.0f);
 		}
 	}
 
